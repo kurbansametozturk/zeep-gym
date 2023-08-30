@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="Shortcut Icon" href="img/icona.png" type="image/x-icon">
+
+  <title>ZeepGym</title>
+
+
+  <style>
+  
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+ }
+
+ *{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
+ }
+
+ body{
+  background-color: rgba(69, 113, 128, 0.777);
+ }
+
+ .all-{
+  width: 1000px;
+  min-height: 1000px;
+  margin: auto;
+ }
+
+ .container{
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
+  /* box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+  background-color:  rgba(69, 113, 128, 0.777) ;
+  border-radius: 5px; */
+  
+ }
+
+ .logo{
+  margin-left: 30px;
+ }
+
+ .logo a{
+  color: rgb(40, 34, 34);
+ }
+
+ .logo span{
+  font-size: 40px;
+ }
+
+ .l-name{
+  letter-spacing: 1px;
+  z-index: 5;
+  position: relative;
+  left: 50px;
+  color: rgba(0, 0, 0, 0.888);
+ }
+
+ .l-name{
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0EwMEYyRjlDMjZFMTFFNUI4QkRFMkRBRDg3QkNFRUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0EwMEYyRkFDMjZFMTFFNUI4QkRFMkRBRDg3QkNFRUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozQTAwRjJGN0MyNkUxMUU1QjhCREUyREFEODdCQ0VFRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozQTAwRjJGOEMyNkUxMUU1QjhCREUyREFEODdCQ0VFRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pi/X/ugAAAY6SURBVHja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"), auto;
+ }
+
+ .l-name h1{
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: 3px;
+ }
+
+ .l-name span{
+  color: /*rgba(233, 27, 27, 0.888)*/ rgb(23, 93, 149);
+  margin-left: 2px;
+  letter-spacing: 1px;
+ }
+
+ .l-name i{
+  position: relative;
+  left: 140px;
+  top: 5px;
+  z-index: -1;
+  font-size: 70px;
+  color: white;
+ }
+
+ .nav-list ul{
+  display: inline-flex;
+  margin-right: 30px;
+ }
+
+ .nav-list ul li{
+  margin-left: 10px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+ }
+
+ .nav-list ul li:hover{
+  background-color:rgb(23, 93, 149);
+  border-radius: 20px;
+ }
+
+ .menu-lıst{
+  width: 1000px;
+  height: 80px;
+  background-color:  rgba(128, 128, 128, 0.602);
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px ;
+  border: 2px solid rgba(0, 0, 0, 0.498);
+ }
+ 
+ .menu-lıst .menu-box{
+  text-align: center;
+  align-items: center;
+ }
+
+ .menu-lıst .menu-box ul{
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+ }
+
+ .menu-box ul li{
+  margin: 0px 30px;
+  position: relative;
+  top: 25px;
+  font-size: 17px;
+  font-weight: 600;
+ }
+
+ .menu-lıst ul li a{
+  color: black;
+  cursor: pointer;
+ }
+
+ .menu-lıst ul li a:hover{
+  color: rgb(23, 93, 149);
+ }
+
+ .ic-{
+  width: 900px;
+  height: 600px;
+  margin-left: 50px;
+  margin-top: 50px;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(img/spor1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px;
+  position: relative;
+ }
+
+ .ic-:hover{
+  transform: scale(1.05);
+  transition: .7s;
+ }
+
+ .ic- h2 a{
+  color: rgba(255, 255, 255, 0.891);
+ }
+
+ .ic- h2{
+  font-weight: 600;
+  position: absolute;
+  width: 400px;
+  height: 180px;
+  bottom: 0;
+  right: 0;
+ }
+
+ .ic-1{
+  width: 1000px;
+  margin-top: 20px;
+ }
+
+
+ .ic-1a{
+  display: flex;
+ }
+
+ .ic-1a:hover .img-1{
+  transform: translate(420px);
+  transition: .999s;
+ }
+
+ .ic-1a:hover .content-1{
+  transform: translate(-580px);
+  transition: .999s;
+ }
+
+ .ic-1a img{
+  margin: 20px 0px 0px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px ;
+ }
+
+ .content-1{
+  margin: 20px 0px 0px 20px;
+  width: 410px;
+  height: 230px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  top: 130px;
+  color: rgba(0, 0, 0, 0.777);
+  word-spacing: 1px;
+ }
+
+ .ic-2a{
+  display: flex; 
+ }
+
+ .content-2{
+  margin: 20px 0px 0px 0px;
+  width: 410px;
+  height: 230px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  top: 130px;
+  color: rgba(0, 0, 0, 0.777);
+  word-spacing: 1px;
+ }
+
+ .ic-2a img{
+  margin: 20px 0px 0px 40px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px;
+  position: relative;
+ }
+
+ .ic-2a:hover img{
+  transform: translate(30px);
+  transition: .999s;
+ }
+
+ .ic-2a:hover .content-2{
+  transform: translate(-30px);
+  transition: .999s;
+ }
+
+ .ara-con{
+  
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+ }
+
+ .ara-con h1{
+  font-size: 70px;
+  font-weight: 400;
+  
+ }
+
+ .ara-con:hover h1{
+  letter-spacing: 6px;
+  color: rgb(23, 93, 149) ;
+  transition: .9s
+  ;
+ }
+
+ footer{
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  margin-top: 60px;
+ }
+
+ .content-3{
+  font-size: 15px;
+  font-weight: 200;
+ }
+
+ .fot-lıst ul {
+  display: inline-flex;
+  margin: 10px 0px 18px 0px;
+ }
+
+ .fot-lıst ul li{
+  margin: 0px 10px;
+ }
+
+ .fot-lıst ul li a{
+  color: black;
+ }
+ 
+  </style>
+</head>
+<body>
+  <section class="all-">
+
+    <header class="container">
+      <!--Logo-->
+      <div class="logo">
+       <a href="#"> <span class="material-symbols-outlined">
+        double_arrow
+        </span></a>
+      </div>
+      <!--Marka İsmi-->
+      <div class="l-name"> 
+        <h1>
+          <i class="fa-sharp fa-solid fa-bolt"> </i> ZEEP<span>GYM</span>
+        </h1>
+      </div>
+      <!--Sosyal Medya İkonları-->
+      <div class="nav-list">
+        <nav>
+          <ul>
+            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i class="fa-brands fa-youtube"></i></li>
+            <li><i class="fa-brands fa-linkedin"></i></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+
+    <nav class="menu-lıst">
+      <div class="menu-box">
+        <ul>
+          <li><a href="#">Ana Sayfa</a></li>
+          <li><a href="#">Spor Dalları</a></li>
+          <li><a href="#">Kurslar</a></li>
+          <li><a href="#">Blog Yazıları</a></li>
+          <li><a href="#">Koçlar ile İletişim</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <article class="ic-">
+      <div>
+        <h2><a href="#">Sporun avantajlarından ziyade dezavantajlarından da bahsettiğimiz blog yazımıza göz atın.</a></h2>
+      </div>
+    </article>
+
+    <article class="ic-1">
+
+      <div class="ic-1a" >
+        <div class="img-1">
+          <img width="550" height="400" loading="lazy" src="img/img1.jpg" alt="">
+        </div>
+        <div class="content-1">
+          <h3>Engeller tanımadığımız spor aktivetileri ile neler başaracağımızı göstermeye devam ediyoruz. Basketbol, atletizm, voleybol, yüzme, futbol, hentbol, uzun atlama, binicilik ve daha nicelerini tüm dünyada ki insanlara ulaştırmaya çalışıyoruz.</h3>
+        </div>
+      </div>
+
+
+     <div class="ara-con">
+      <h1>SPOR İNSANIN MERKEZİDİR.</h1>
+     </div>
+
+     <div class="ic-2a">
+      <div class="content-2">
+        <h3>Kadın sporcuların da bu alanda kendilerine yer bulması için elimizden gelenin en iyisini yapmayı önceliklerimiz haline getirmekle beraber, teşviklerimizi de sürdürüyoruz. "Kadın medeniyettir." sloganımız ile bu sosyal sorumlulukta yer alıyoruz.</h3>
+      </div>
+      <div class="img-2">
+        <img width="550" height="400" loading="lazy" src="img/img2.jpg" alt="">
+      </div>
+     </div>
+
+     <!--<div class="ic-3a">
+      <div class="img-3">
+        <img src="" alt="">
+      </div>
+      <div class="img-4">
+        <img src="" alt="">
+      </div>
+     </div>-->
+
+
+    </article>
+
+    <footer>
+      <div class="content-3">
+        <p>Tüm hakları spor dünyasına aittir.</p>
+      </div>
+      <div class="fot-lıst">
+        <ul>
+          <li> <a href="#"> Başa Dön</a> </li> |
+          <li><a href="#">Koçlar ile İletişim</a></li>|
+          <li><a href="#">Hakkımızda</a></li>|
+          <li><a href="#">SSL</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  </section>
+</body>
+</html>
